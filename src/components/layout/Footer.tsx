@@ -83,6 +83,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Giant faded wordmark — bookends the page (RAWBLOX-style) */}
+      <div className="overflow-hidden" aria-hidden="true">
+        <p className="select-none text-center text-[24vw] font-extrabold uppercase leading-[0.8] tracking-[0.02em] text-white/[0.04]">
+          DMEN
+        </p>
+      </div>
     </footer>
   );
 }

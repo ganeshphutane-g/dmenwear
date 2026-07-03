@@ -366,6 +366,16 @@
     animation: none;
   }
 
+  /* Slideshow index progress bar */
+  @keyframes hero-progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
   /* Hero media load beat: slow settle-scale, runs pre-hydration */
   @keyframes hero-photo-in {
     from {
@@ -411,6 +421,22 @@
   .text-outline {
     color: transparent;
     -webkit-text-stroke: 1.5px rgba(14, 14, 14, 0.1);
+  }
+
+  /* Horizontal product marquee (FEATURED DROPS) — track duplicated, -50% loop */
+  @keyframes product-marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  .product-marquee-track {
+    animation: product-marquee 48s linear infinite;
+  }
+  .product-marquee:hover .product-marquee-track {
+    animation-play-state: paused;
   }
 
   .no-scrollbar {
@@ -459,8 +485,15 @@
   html[data-motion="off"] .plp-swap,
   html[data-motion="off"] .badge-pop,
   html[data-motion="off"] .route-fade,
-  html[data-motion="off"] .dmen-marquee-track {
+  html[data-motion="off"] .dmen-marquee-track,
+  html[data-motion="off"] .product-marquee-track,
+  html[data-motion="off"] .lines-load .mask-line > span {
     animation: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .product-marquee-track {
+      animation: none;
+    }
   }
   @media (scripting: none) {
     .reveal,
