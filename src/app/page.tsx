@@ -126,7 +126,7 @@ export default async function Home() {
     <>
       <HeroSlideshow slides={HERO_SLIDES} />
 
-      <div className="mt-14 md:mt-20">
+      <div className="mt-8 md:mt-12">
         <Marquee />
       </div>
 
